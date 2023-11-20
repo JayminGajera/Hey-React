@@ -32,15 +32,15 @@
 # Class base component life cycle method
 
 ----- MOUNTING -----
-constructor(dummy)
-Render(dummy)
-    <HTML Dummy>
-ComponentDidMount
-    <API Call>
-    <this.setState> -> State variable is updated
+    -constructor(dummy)
+    -Render(dummy)
+        -<HTML Dummy>
+    -ComponentDidMount
+        -<API Call>
+        -<this.setState> -> State variable is updated
 
 ----- UPDATE -----
-Render(API data)
-<HTML (new data)>
+    -Render(API data)
+    -<HTML (new data)>
 
-ComponentDidUpdate
+    -ComponentDidUpdate
