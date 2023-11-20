@@ -18,7 +18,7 @@
     - Different dev and prod bundles
 
 
-#Two Types of export/import
+# Two Types of export/import
     
     -Default export/import
             export default component;
@@ -29,7 +29,7 @@
             import {component} from '/path';
 
 
-#Class base component life cycle method
+# Class base component life cycle method
 
 ----- MOUNTING -----
 constructor(dummy)
