@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestroData, setlistOfRestroData] = useState([]);
@@ -32,7 +33,8 @@ const Body = () => {
         json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
-      console.log("Restaurant ",
+      console.log(
+        "Restaurant ",
         json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
       );
@@ -40,6 +42,13 @@ const Body = () => {
       console.log("Error while fetching the data", error.message);
     }
   };
+
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false)
+    return (
+      <h2 className="offline-page">Loods like you're  offline!!, Please check your internet connection</h2>
+    );
 
   return listOfRestroData?.length === 0 ? (
     <Shimmer />
@@ -93,7 +102,11 @@ const Body = () => {
 
       <div className="res-container">
         {filteredRestaurant?.map((res) => {
-          return <Link key={res?.info?.id} to={"/restaurants/" + res?.info?.id}><RestaurantCard data={res} /></Link>;
+          return (
+            <Link key={res?.info?.id} to={"/restaurants/" + res?.info?.id}>
+              <RestaurantCard data={res} />
+            </Link>
+          );
         })}
       </div>
     </div>

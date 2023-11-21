@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import food from "../../images/food.jpeg";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
+
+  const onlineStatus = useOnlineStatus();
 
   return (
     <div className="header">
       <div className="logo-header">
         <img className="logo" src={food} alt="app logo" />
+        <div className="status">{onlineStatus ? (<span className="online">Online</span>) : (<span className="offline">Offline</span>)}</div>
       </div>
       <div className="items">
         <ul>
