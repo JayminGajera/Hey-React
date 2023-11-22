@@ -1,6 +1,5 @@
-
 # Two Types of export/import
-    
+
     -Default export/import
             export default component;
             import component from '/path'
@@ -9,10 +8,9 @@
             export const component;
             import {component} from '/path';
 
-
 # Class base component life cycle method
 
-    -MOUNTING 
+    -MOUNTING
         constructor(dummy)
         Render(dummy)
         <HTML Dummy>
@@ -20,8 +18,29 @@
         <API Call>
         <this.setState> -> State variable is updated
 
-    -UPDATE 
+    -UPDATE
         Render(API data)
         <HTML (new data)>
 
         ComponentDidUpdate()
+
+# For optimizing app we want to create separate bundling of .js files so that is called
+
+    -Chunking
+    -Code Spliting
+    -Dynemic Bundling
+    -lazy loading
+    -on demand loading
+    -dynamix import
+
+# How to import lazy loading
+
+    -import {lazy} from "react";
+
+    -const Grocery = lazy(() =>
+        import("./component/Grocery");
+    )
+
+    -<Suspense fallback={<h1>Loading...</h1>}>
+        <Grocery/>
+    </Suspense>

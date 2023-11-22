@@ -51,7 +51,7 @@
     background-color: green;
     padding: 5px;
     position: absolute;
-    margin-left:340px;
+    margin-left:437px;
     margin-top: -10px;
     width: 20px;
     height: 20px;
@@ -227,7 +227,7 @@ a{
 
 
 .shimmer-image{
-    background-color: #babcbb;
+    background-color: #c6c5c5;
     height: 14rem;
     border-radius: 10px 10px 0 0;
     animation: cardanime 2s infinite;
@@ -243,7 +243,7 @@ a{
 
 .title-0{
     height: 1.5rem;
-    background-color: #babcbb;
+    background-color: #c6c5c5;
     border-radius: 10px 10px 10px 10px;
     margin: 0.5rem;
     animation: cardanime 1s infinite;
@@ -251,7 +251,7 @@ a{
 
 .title-1{
     height: 0.5rem;
-    background-color: #babcbb;
+    background-color: #c6c5c5;
     border-radius: 10px 10px 10px 10px;
     margin: 0.5rem;
     animation: cardanime 2s infinite;
@@ -265,7 +265,7 @@ a{
 
 .title-side{
     height: 0.5rem;
-    background-color: #babcbb;
+    background-color: #c6c5c5;
     border-radius: 10px 10px 10px 10px;
     margin: 0.5rem; 
     width: 4rem;
@@ -280,7 +280,6 @@ a{
     cursor: pointer;
     font-style: bold;
     color:rgb(187, 158, 31);
-    padding:0 1rem 0 1rem;
 }
 
 .bar{
@@ -292,7 +291,7 @@ a{
 
 .filters-area{
     height: 3rem;
-    margin-right: 9.3rem;
+    margin-right: 8.5rem;
     display: flex;
     align-items: center;
 }
@@ -327,6 +326,7 @@ a{
     width: 15rem;
     object-fit: cover;
     margin-top: 0.5rem;
+    border-radius: 10px;
 }
 
 .restaurant-menu-page{
@@ -376,4 +376,8 @@ a{
 .offline-page{
     margin: 3rem;
     color: red;
+}
+
+.grocery-app{
+    margin: 3rem;
 }
