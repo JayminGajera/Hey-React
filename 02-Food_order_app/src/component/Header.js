@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo-header">
-        <img className="logo" src={food} alt="app logo" />
+        <Link to="/"><img className="logo" src={food} alt="app logo" /></Link>
         <div className="status">
           {onlineStatus ? (
             <span className="online">Online</span>
@@ -31,7 +31,7 @@ const Header = () => {
           <li>
             <Link to="/about">About Us</Link>
           </li>
-          <li>
+          <li className="grocery-store">
             <Link to="/grocery">Grocery</Link>
           </li>
           <li className="cart-base">Cart</li>
