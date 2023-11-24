@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 html{
@@ -28,6 +28,7 @@ html{
     top: 0;
     left: 0;
     right: 0;
+    z-index: 10;
 }
 
 .logo-header{
@@ -428,4 +429,88 @@ a{
 .contect{
     margin: 3rem;
     margin-top: 5rem;
+}
+
+.promoted{
+    background-color: rgb(46, 94, 46);
+    position: absolute;
+    transform: translateX(-8px) translateY(8px);
+    color: white;
+    padding: 0.3rem;
+    border-radius:3px ;
+
+}
+
+.categories{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.category-title{
+    width: full;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.categories-header{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-size: large;
+}
+
+.category-item{
+    padding: 1rem;
+    border-bottom: 1.4px solid rgb(210, 210, 210);
+    display: flex;
+    flex-direction: column;
+    font-size: medium;
+}
+
+.category-item-name{
+    font-weight:500;
+    display: flex;
+    width: full;
+    justify-content: space-between;
+}
+
+.category-item-image{
+    width: 7rem;
+    height: 7rem;
+    object-fit: contain;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.category-item-desc{
+    margin-top: 1rem;
+    color: gray;
+    font-weight: normal;
+}
+
+.category-item-ti{
+ display: flex;
+ flex-direction: column;
+}
+
+.cate-btn{
+    position: absolute;
+    margin-top: 5.3rem;
+    margin-left: 2rem;
+    font-weight: bold;
+    background-color: black;
+    padding: 0.25rem;
+    border-radius: 7px;
+    color: white;
+}
+
+.add-btn{
+    font-weight: 400;
 }

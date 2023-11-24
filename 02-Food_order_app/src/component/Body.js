@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{withPromotedLabel} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -10,6 +10,9 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+
+  //HOD - returns new component in RestaurantCardPromoted variable
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
   console.log("Body rendered before useEffect");
 
@@ -104,7 +107,11 @@ const Body = () => {
         {filteredRestaurant?.map((res) => {
           return (
             <Link key={res?.info?.id} to={"/restaurants/" + res?.info?.id}>
-              <RestaurantCard data={res} />
+
+            {/* if restaurant is open so, add label of open */
+              res?.info?.isOpen ? (<RestaurantCardPromoted data={res}/>) : ( <RestaurantCard data={res} />)
+            }
+             
             </Link>
           );
         })}
