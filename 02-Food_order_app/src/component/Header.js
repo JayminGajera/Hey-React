@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import food from "../../images/food.jpeg";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
+
+  const data = useContext(UserContext);
 
   const onlineStatus = useOnlineStatus();
 
@@ -40,6 +43,9 @@ const Header = () => {
             <button className="login-btn" onClick={() => setIsLogin(!isLogin)}>
               {isLogin ? "Log out" : "Login"}
             </button>
+          </li>
+          <li>
+            {data?.loggedInUser}
           </li>
         </ul>
       </div>

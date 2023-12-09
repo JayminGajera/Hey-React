@@ -1,7 +1,11 @@
-import React from "react";
-import { MENU_IMG } from "../utils/constants";
+import React, { useContext } from "react";
+// import { MENU_IMG } from "../utils/constants";
+import UserContext from "../utils/UserContext";
 
 const RestaurantCard = ({ data }) => {
+
+  const {loggedInUser} = useContext(UserContext);
+
   return (
     <div className="main-card">
       <div className="menu-image">
@@ -18,6 +22,7 @@ const RestaurantCard = ({ data }) => {
           <p>{data?.info?.totalRatingsString} Total ratings</p>
         </div>
         <p>{data?.info?.locality}</p>
+        <p>{loggedInUser}</p>
       </div>
     </div>
   );

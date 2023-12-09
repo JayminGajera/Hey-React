@@ -1,12 +1,14 @@
 import ItemList from "./ItemList";
 import {useState} from "react";
+import {IoIosArrowDown,IoIosArrowUp } from "react-icons/io";
 
-const RestaurantCategory = ({data}) => {
+const RestaurantCategory = ({data,showItems,setShowIndex}) => {
 
-    const [showItems,setShowItems] = useState(false);
+    // const [showItems,setShowItems] = useState(false);
 
     const handleClick = () => {
-        setShowItems(!showItems);        
+        // setShowItems(!showItems);     
+        setShowIndex();   
     }
 
     return(
@@ -16,7 +18,7 @@ const RestaurantCategory = ({data}) => {
 
                 <div className="category-title" onClick={handleClick}>
                     <span><b>{data?.title} ({data?.itemCards?.length})</b></span>
-                    <span>▽</span>
+                    <span className="drop-icon">{!showItems ? <IoIosArrowDown/> : <IoIosArrowUp/>}</span>
                 </div>
 
                  {/* Accordian Body */}

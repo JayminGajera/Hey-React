@@ -10,7 +10,7 @@ const ItemList = ({ items }) => {
           <div className="category-item-name">
             <div className="category-item-ti">
                 <span>{item?.card?.info?.name}</span>
-                <span>₹{item?.card?.info?.price/100}</span>
+                <span>{item?.card?.info?.price ? `₹${item?.card?.info?.price/100}` : `₹${item?.card?.info?.defaultPrice/100}`}</span>
                 <p className="category-item-desc">{item?.card?.info?.description}</p>
             </div>
             <div>
