@@ -565,3 +565,10 @@ a{
     font-weight: bold;
 
 }
+
+.total-amount{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    font-weight: bold;
+    font-size: large;
+}
