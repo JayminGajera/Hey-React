@@ -3,9 +3,14 @@ import food from "../../images/food.jpeg";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
+
+  //subscribing to the store using selector
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   const data = useContext(UserContext);
 
@@ -37,8 +42,8 @@ const Header = () => {
           <li className="grocery-store">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="cart-base">Cart</li>
-          <span className="cart">{9}</span>
+          <li className="cart-base"><Link to="/cart">Cart</Link></li>
+          <span className="cart">{cartItems.length}</span>
           <li>
             <button className="login-btn" onClick={() => setIsLogin(!isLogin)}>
               {isLogin ? "Log out" : "Login"}

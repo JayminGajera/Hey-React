@@ -44,3 +44,11 @@
     -<Suspense fallback={<h1>Loading...</h1>}>
         <Grocery/>
     </Suspense>
+
+# Redux Toolkit
+    -Install @reduxjs/toolkit and react-redux
+    -Build our store
+    -Connect our store to our app
+    -Create Slice 
+    -Dispatch(action)
+    -Selector

@@ -3,7 +3,7 @@ import RestaurantCard,{withPromotedLabel} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
+// import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestroData, setlistOfRestroData] = useState([]);
@@ -17,7 +17,7 @@ const Body = () => {
 
   console.log("Body rendered before useEffect");
 
-  const {loggedInUser,setUserName} = useContext(UserContext);
+  // const {loggedInUser,setUserName} = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -104,8 +104,8 @@ const Body = () => {
             Show All
           </button>
         </div>
-        <label>User : </label>
-        <input value={loggedInUser} onChange={(e) => setUserName(e.target.value)}/>
+        {/* <label>User : </label>
+        <input value={loggedInUser} onChange={(e) => setUserName(e.target.value)}/> */}
       </div>
 
       <div className="res-container">
