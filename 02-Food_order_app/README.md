@@ -52,3 +52,17 @@
     -Create Slice 
     -Dispatch(action)
     -Selector
+
+# Types of testing (developer)
+    -Unit testing
+    -Integration testing
+    -End to End testing - e2e testing
+
+# Setting up testing in our app
+    -Install react testing library
+    -Installed jest
+    -Installed babel dependencies
+    -Configure babel
+    -Configure parcel config file to disable default babel transpilation
+    -Jest Configuration
+    -Install jsdom library

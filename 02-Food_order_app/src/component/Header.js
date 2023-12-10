@@ -22,9 +22,9 @@ const Header = () => {
         <Link to="/"><img className="logo" src={food} alt="app logo" /></Link>
         <div className="status">
           {onlineStatus ? (
-            <span className="online">Online</span>
+            <p className="online"></p>
           ) : (
-            <span className="offline">Offline</span>
+            <p className="offline"></p>
           )}
         </div>
       </div>
