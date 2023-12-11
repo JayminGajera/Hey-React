@@ -1,6 +1,6 @@
 import { sum } from "../Sum";
 
-test("sum function should calculate the sum of two numbers",() => {
+it("sum function should calculate the sum of two numbers",() => {
     
     const res = sum(5,3);
 

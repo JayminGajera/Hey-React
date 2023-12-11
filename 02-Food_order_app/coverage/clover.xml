@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1702200380504" clover="3.2.0">
-  <project timestamp="1702200380504" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
+<coverage generated="1702296622206" clover="3.2.0">
+  <project timestamp="1702296622206" name="All files">
+    <metrics statements="40" coveredstatements="30" conditionals="6" coveredconditionals="3" methods="15" coveredmethods="9" elements="61" coveredelements="42" complexity="0" loc="40" ncloc="40" packages="1" files="4" classes="4"/>
+    <file name="Body.js" path="F:\Namste-React\02-Food_order_app\src\component\Body.js">
+      <metrics statements="31" coveredstatements="22" conditionals="6" coveredconditionals="3" methods="10" coveredmethods="5"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="3" type="stmt"/>
+      <line num="12" count="3" type="stmt"/>
+      <line num="13" count="3" type="stmt"/>
+      <line num="16" count="3" type="stmt"/>
+      <line num="18" count="3" type="stmt"/>
+      <line num="22" count="3" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="26" count="3" type="stmt"/>
+      <line num="28" count="3" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+      <line num="34" count="1" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="42" count="1" type="stmt"/>
+      <line num="48" count="0" type="stmt"/>
+      <line num="52" count="3" type="stmt"/>
+      <line num="54" count="3" type="cond" truecount="1" falsecount="1"/>
+      <line num="55" count="0" type="stmt"/>
+      <line num="59" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="70" count="1" type="stmt"/>
+      <line num="75" count="1" type="stmt"/>
+      <line num="76" count="1" type="stmt"/>
+      <line num="77" count="0" type="stmt"/>
+      <line num="81" count="0" type="stmt"/>
+      <line num="91" count="0" type="stmt"/>
+      <line num="92" count="0" type="stmt"/>
+      <line num="94" count="0" type="stmt"/>
+      <line num="102" count="0" type="stmt"/>
+      <line num="114" count="0" type="stmt"/>
+    </file>
+    <file name="Contect.js" path="F:\Namste-React\02-Food_order_app\src\component\Contect.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="4" type="stmt"/>
+    </file>
+    <file name="RestaurantCard.js" path="F:\Namste-React\02-Food_order_app\src\component\RestaurantCard.js">
+      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
+      <line num="5" count="2" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+      <line num="36" count="2" type="stmt"/>
+      <line num="37" count="3" type="stmt"/>
+      <line num="38" count="0" type="stmt"/>
+    </file>
     <file name="sum.js" path="F:\Namste-React\02-Food_order_app\src\component\sum.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>

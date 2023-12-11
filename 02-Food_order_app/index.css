@@ -578,3 +578,11 @@ a{
     font-weight: bold;
     font-size: large;
 }
+
+.contect-field{
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem;
+    row-gap: 0.5rem;
+}

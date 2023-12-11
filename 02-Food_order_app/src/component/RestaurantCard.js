@@ -7,7 +7,7 @@ const RestaurantCard = ({ data }) => {
   // const {loggedInUser} = useContext(UserContext);
 
   return (
-    <div className="main-card">
+    <div className="main-card" data-testid="resCard">
       <div className="menu-image">
         <img
           src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_366/${data?.info?.cloudinaryImageId}`}
