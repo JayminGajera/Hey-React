@@ -24,7 +24,7 @@ const Cart = () => {
       <h2>Cart</h2>
       <div className="cart-item-frame">
         {cartItems.length > 0 ? (
-          <div>
+          <div className="cart-item-res">
             <button onClick={clearAllCart} className="clear-cart-btn">Clear Cart</button>
             <ItemList items={cartItems} />
             <p className="total-amount">total amount ₹{totalAmount}</p>

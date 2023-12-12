@@ -27,9 +27,16 @@ const Body = () => {
 
   const fetchData = async () => {
     try {
-      const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=21.246892&lng=72.917604&carousel=true&third_party_vendor=1"
-      );
+      if(window.innerWidth > 600){
+        var data = await fetch(
+          "https://www.swiggy.com/dapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=21.246892&lng=72.917604&carousel=true&third_party_vendor=1"
+        ); 
+      }else{
+        var data = await fetch(
+          "https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=21.246892&lng=72.917604&carousel=true&third_party_vendor=1"
+        );
+      }  
+      
       const json = await data.json();
       setlistOfRestroData(
         json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle

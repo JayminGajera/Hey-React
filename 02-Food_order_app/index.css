@@ -586,3 +586,123 @@ a{
     margin: 3rem;
     row-gap: 0.5rem;
 }
+
+.burger-menu{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    .items>ul>li{
+       display: none;
+    }
+
+    .menu-open{
+        position: absolute;
+        top: 4rem;
+        background-color: rgb(212, 212, 253);
+        width: 100%;
+        left: 0;
+        height: fit-content;
+        padding: 1.5rem;
+        font-weight: 600;
+    }
+
+    .burger-menu{
+       display: block;
+       font-size: 1.8rem;
+    }
+
+    .burger-open{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .burger-open>ul{
+        list-style: none;
+        display: flex;
+        flex-direction:column ;
+        justify-content: space-between;
+        cursor: pointer;    
+    }
+
+    .burger-open>ul>li{
+        border-bottom: 0.1rem solid rgb(176, 176, 255);
+        margin: 0.5rem;
+    }
+
+    .grocery-store-res{
+        background-color: transparent;
+    }
+
+    .restaurant-menu-page{
+        width: 100%;
+        margin-top: 10rem;
+      
+    }
+
+    .categories{
+        width: 100%;
+    }
+
+    .categories-header{
+        width: 120%;
+        margin-left: 0;
+        margin-right: 0.1rem;
+    }
+
+    .category-title{
+        font-size: smaller;
+    }
+
+    .category-item-desc{
+        font-size: smaller;
+    }
+
+    .cart-added-items{
+        margin-top: 10rem;
+        width: 100%;
+    }
+
+    .category-item{
+        width: 100%;
+    }
+
+    .cart-item-res{
+        width: 100%;
+        margin-left: -45px;
+    }
+
+    .about{
+        margin-top: 10rem;
+
+    }
+
+    .user-card{
+        display: flex;
+        justify-content: flex-start;
+        margin-left: -15px;
+    }
+
+    .cart-base{
+        position: relative;
+    }
+
+    .cart{
+        background-color: green;
+        position: absolute;
+        top: 12rem;
+        right: 11rem;
+        opacity: 0;
+    }
+
+    .filter-btn{
+       width: auto;
+    }
+
+    .body{
+        margin-left: 3rem;
+        
+    }
+
+    
+}
