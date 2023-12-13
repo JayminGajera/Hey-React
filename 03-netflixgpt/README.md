@@ -18,3 +18,6 @@
     -NetflixGpt
         -Search bar
         -Movie suggestions
+
+# Third party
+    -Formik : this is library use for form validation
