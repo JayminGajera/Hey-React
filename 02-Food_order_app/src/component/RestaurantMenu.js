@@ -12,31 +12,31 @@ const RestaurantMenu = () => {
 
   const resInfo = useRestaurantMenu(resId);
 
-  if (resInfo?.length === null) return <Shimmer />;
+  if (resInfo === null) return <Shimmer />;
 
-  const name = resInfo?.cards[0]?.card?.card?.info?.name;
+  const name = resInfo?.cards[2]?.card?.card?.info?.name;
   console.log("name", name);
 
-  const cuisines = resInfo?.cards[0]?.card?.card?.info?.cuisines;
+  const cuisines = resInfo?.cards[2]?.card?.card?.info?.cuisines;
   console.log("cuisines", cuisines);
 
   const costForTwoMessage =
-    resInfo?.cards[0]?.card?.card?.info?.costForTwoMessage;
+    resInfo?.cards[2]?.card?.card?.info?.costForTwoMessage;
   console.log("costForTwoMessage", costForTwoMessage);
 
   console.log(
     "resinfo before item ",
-    resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
+    resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
       ?.itemCards
   );
 
   const carousel =
-    resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
+    resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
       ?.itemCards;
   console.log("items ", carousel);
 
   const categories =
-    resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (c) =>
         c?.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
