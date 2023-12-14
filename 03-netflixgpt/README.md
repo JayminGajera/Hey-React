@@ -21,3 +21,6 @@
 
 # Third party
     -Formik : this is library use for form validation
+
+# Movie data
+    -tmdb api website

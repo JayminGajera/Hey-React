@@ -1,37 +1,69 @@
-import {signOut} from "firebase/auth";
-import {auth} from "../utils/firebase";
-import {useNavigate} from "react-router-dom";
-import { useSelector } from "react-redux";
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { addUser, removeUser } from "../utils/userSlice";
+import { NETFLIX_LOGO } from "../utils/constants";
 
 const Header = () => {
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
 
   const handleSignOut = () => {
-    signOut(auth).then(() => {
-      navigate("/")
-    }).catch((error) => {
-      navigate("/error");
+    signOut(auth)
+      .then(() => {
+      })
+      .catch((error) => {
+        navigate("/error");
+      });
+  };
+
+  useEffect(() => {
+   const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(
+          addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        );
+        navigate("/browse");
+      } else {
+        dispatch(removeUser());
+        navigate("/");
+      }
     });
-  }
+
+    //unsubscribe when componenet will unmount
+    return () => unsubscribe();
+  }, []);
 
   return (
-    <div className="absolute w-screen z-10 flex justify-between">
+    <div className="absolute w-[100%] z-10 flex justify-between items-center bg-gradient-to-b from-black">
       <img
-        className="w-56 px-8 py-2 bg-gradient-to-b from-black"
-        src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+        className="w-56 px-8 py-2 "
+        src={NETFLIX_LOGO}
         alt="logo"
       />
 
-      <div className="flex gap-x-1 items-start mr-12">
-          <img
-            src={user?.photoURL}
-            className="w-7 h-7 mt-2"
-          />
-        
-        <button onClick={handleSignOut} className=" mt-2 p-1 border border-white bg-black text-white">Sign out</button>
-      </div>
+      {user && (
+        <div className="flex gap-x-1 items-center mr-7 ">
+          <img src={user?.photoURL} className="w-9 h-9 mt-2 rounded-full object-cover" />
+
+          <button
+            onClick={handleSignOut}
+            className=" mt-2 p-2 border border-white bg-black text-white font-semibold text-xs bg-opacity-70 rounded-full"
+          >
+            Sign out
+          </button>
+        </div>
+      )}
     </div>
   );
 };
