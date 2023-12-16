@@ -15,3 +15,22 @@ export const API_OPTIONS = {
 };
 
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w200/";
+
+export const SUPPORTED_LANGUAGE = [
+  {
+    identifier:"english",
+    name:"English"
+  },
+  {
+    identifier:"hindi",
+    name:"Hindi"
+  },
+  {
+    identifier:"spanish",
+    name:"Spanish"
+  },
+]
+
+
+export const OPENAI_KEY = "";
+// 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

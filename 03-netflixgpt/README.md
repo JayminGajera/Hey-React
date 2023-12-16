@@ -24,3 +24,6 @@
 
 # Movie data
     -tmdb api website
+
+# OpenAI api
+    -plateform.openai.com
