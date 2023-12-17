@@ -1,12 +1,29 @@
-import React, { useRef } from "react";
+import React, { useRef,useState } from "react";
 import langKey from "../utils/languageConstant";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import openai from "../utils/openai";
+import {addGptMovieResults} from "../utils/gptSlice";
+import {API_OPTIONS} from "../utils/constants"
 
 const GPTSeachBar = () => {
   const lang = useSelector((store) => store.config.lang);
 
+  const [error, setError] = useState(null);
+
+  const dispatch = useDispatch();
+
   const searchText = useRef(null);
+
+  //search movies after getting response of openai
+
+  const searchMovies = async(movie) => {
+    
+    const data = await fetch("https://api.themoviedb.org/3/search/movie?query="+movie+"&include_adult=false&language=en-US&page=1",API_OPTIONS);
+    const json = await data.json();
+
+    return json.results;
+
+  }
 
   const handleGptSearchClick = async () => {
     //make an api call to openai api and get movie result
@@ -21,7 +38,22 @@ const GPTSeachBar = () => {
       model: "gpt-3.5-turbo",
     });
 
-    console.log("results ", gptResults.choices);
+    if(!gptResults.choices){
+      console.log('Suggestion not present');
+      setError('No suggestion Found');
+    }
+
+    console.log("results :", gptResults.choices?.[0]?.message?.content);
+
+    const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
+
+    const promiseArray = gptMovies.map((movie) => searchMovies(movie));
+    //here call function is async so searchMovies fun return array of promise
+
+    const tmdbResults = await Promise.all(promiseArray);
+    console.log("tmdb results ",tmdbResults);
+
+    dispatch(addGptMovieResults({movieNames:gptMovies,movieResults:tmdbResults}));
   };
 
   return (
@@ -32,7 +64,7 @@ const GPTSeachBar = () => {
       >
         <input
           ref={searchText}
-          className="py-2 px-1 w-[20rem] rounded-md mr-2"
+          className="py-2 px-2 w-[20rem] rounded-md mr-2"
           type="search"
           placeholder={langKey[lang].getSearchPlaceholder}
         />
@@ -42,6 +74,8 @@ const GPTSeachBar = () => {
         >
           {langKey[lang].search}
         </button>
+
+        <p className="text-white">{error}</p>
       </form>
     </div>
   );
