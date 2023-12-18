@@ -94,7 +94,7 @@ const Login = () => {
   return (
     <div >
       <Header/>
-      <div className="absolute hidden sm:block">
+      <div className="absolute h-screen sm:block">
         <img
           src={BG_IMG}
           alt="bg-img"
