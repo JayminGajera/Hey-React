@@ -98,7 +98,7 @@ const Login = () => {
         <img
           src={BG_IMG}
           alt="bg-img"
-          className="h-screen sm:inline-block"
+          className="h-screen object-cover sm:inline-block"
         />
       </div>
 
