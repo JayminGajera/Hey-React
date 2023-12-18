@@ -92,12 +92,13 @@ const Login = () => {
   };
 
   return (
-    <div >
+    <div>
       <Header/>
-      <div className="absolute h-screen sm:block">
+      <div className="absolute">
         <img
           src={BG_IMG}
           alt="bg-img"
+          className="h-screen sm:inline-block"
         />
       </div>
 
