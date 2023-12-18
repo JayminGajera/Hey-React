@@ -57,9 +57,9 @@ const GPTSeachBar = () => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className="flex md:justify-center pt-[30%] md:pt-0">
       <form
-        className="p-6 mt-[10%] bg-black rounded-md"
+        className="md:p-6 p-2 -mt-[20%] md:mt-[10%] bg-black rounded-md"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
@@ -75,7 +75,6 @@ const GPTSeachBar = () => {
           {langKey[lang].search}
         </button>
 
-        <p className="text-white">{error}</p>
       </form>
     </div>
   );

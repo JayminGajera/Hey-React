@@ -59,11 +59,11 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute w-[100%] z-20 flex justify-between items-center bg-gradient-to-b from-black">
+    <div className="absolute top-0 w-[100%] z-20 flex flex-col sm:flex-row md:flex-row justify-center sm:justify-between md:justify-between items-center sm:bg-transparent md:bg-transparent bg-gradient-to-b from-black bg-black">
       <img className="w-56 px-8 py-2 " src={NETFLIX_LOGO} alt="logo" />
 
       {user && (
-        <div className="flex gap-x-1 items-center mr-7 ">
+        <div className="flex md:gap-x-2 items-center mr-7 ">
           {
             showGptSearch && <div className="mt-2 mr-2">
             <select
@@ -91,7 +91,7 @@ const Header = () => {
 
           <img
             src={user?.photoURL}
-            className="w-9 h-9 mt-2 rounded-full object-cover"
+            className="w-9 h-9 mt-2 hidden md:inline-block rounded-full object-cover"
           />
 
           <button
