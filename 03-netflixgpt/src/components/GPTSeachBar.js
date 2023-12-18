@@ -64,7 +64,7 @@ const GPTSeachBar = () => {
       >
         <input
           ref={searchText}
-          className="py-2 px-2 w-[20rem] rounded-md mr-2"
+          className="py-2 px-2 w-[15rem] md:w-[20rem] rounded-md mr-2"
           type="search"
           placeholder={langKey[lang].getSearchPlaceholder}
         />
