@@ -57,9 +57,9 @@ const GPTSeachBar = () => {
   };
 
   return (
-    <div className="flex md:justify-center pt-[30%] md:pt-0 z-50">
+    <div className="flex absolute top-[15rem] md:top-20 md:w-full md:justify-center pt-[30%] md:pt-0 z-50">
       <form
-        className="md:p-6 p-2 -mt-[20%] md:mt-[10%] bg-black rounded-md"
+        className="md:p-6 p-2 h-[4rem] md:h-auto flex -mt-[20%] md:mt-[10%] bg-black rounded-md"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
