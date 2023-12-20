@@ -27,7 +27,7 @@ const LiveChat = () => {
 
   return (
     <>
-      <h1 className="font-bold py-2 px-1 bg-slate-200 rounded-lg border border-b-white ">
+      <h1 className="font-bold py-2 px-1 mb-2 md:mb-0 bg-slate-200 rounded-lg border border-b-white ">
         LiveChat
       </h1>
       <div className="w-full rounded-lg h-[360px] shadow-lg bg-slate-200 p-2 overflow-y-scroll flex flex-col-reverse container-snap">
@@ -45,7 +45,7 @@ const LiveChat = () => {
 
           setLiveMessage("");
         }}
-        className="py-2 px-1 bg-slate-200 rounded-lg mt-1 flex gap-x-1"
+        className="py-2 px-1 bg-slate-200 rounded-lg md:mt-1 mt-2 flex gap-x-1"
       >
         <input
           value={liveMessage}

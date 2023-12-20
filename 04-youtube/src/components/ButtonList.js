@@ -4,7 +4,7 @@ import { buttonList } from '../utils/constants'
 
 const ButtonList = () => {
   return (
-    <div className='flex gap-x-2'>
+    <div className='flex md:w-full w-[100%] md:gap-x-2 gap-x-1 overflow-x-scroll container-snap'>
       {
         buttonList.map((category) => {
           return (

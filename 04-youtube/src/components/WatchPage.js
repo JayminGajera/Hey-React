@@ -37,13 +37,11 @@ const WatchPage = () => {
   };
 
   return (
-    <div className="col-span-11 p-2">
-      <div className="flex gap-x-3">
-        <div>
+    <div className="p-2">
+      <div className="md:flex md:flex-row flex-col gap-x-3">
+        <div className="w-full md:w-[800px]">
           <iframe
-            className="rounded-lg shadow-lg"
-            width="800"
-            height="450"
+            className="rounded-lg shadow-lg md:w-[800px] md:h-[450px] mb-2"
             src={"https://www.youtube.com/embed/" + searchParams.get("v")}
             title="YouTube video player"
             frameborder="0"
@@ -51,16 +49,16 @@ const WatchPage = () => {
             allowfullscreen
           ></iframe>
         </div>
-        <div className="w-full">
+        <div className="md:w-full w-full">
           <LiveChat />
         </div>
       </div>
 
       {/* description container */}
-      <div className="w-[800px] ">
-        <h1 className="text-xl font-bold p-1">{info?.snippet?.title}</h1>
+      <div className="max-w-[800px] md:w-[800px] w-[320px]">
+        <h1 className="md:text-xl text-lg font-bold p-1">{info?.snippet?.title}</h1>
         <div className="flex gap-x-10 items-center p-2 bg-gray-200 rounded-lg">
-          <h1 className="font-semibold">{info?.snippet?.channelTitle}</h1>
+          <h1 className="font-semibold md:text-lg text-sm">{info?.snippet?.channelTitle}</h1>
           <p>like {info?.statistics?.likeCount}</p>
           <button
             onClick={() => setSubscribe(!subscribe)}
@@ -95,7 +93,7 @@ const WatchPage = () => {
       </div>
 
       {/* comments container */}
-      <div className="w-[800px]">
+      <div className="max-w-[800px] md:w-[800px] w-[320px] mt-2">
         <CommentsContainer />
       </div>
     </div>

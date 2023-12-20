@@ -15,8 +15,8 @@ const CommentList = ({ comments }) => {
 
 const CommentsContainer = () => {
   return (
-    <div className="bg-gray-200 p-2 rounded-lg mt-2">
-      <h1 className="font-bold text-md border border-b-slate-50 pb-2">Comments</h1>
+    <div className="bg-gray-200 p-2 rounded-lg md:mt-2">
+      <h1 className="font-bold text-md border border-b-slate-50 pb-2 pt-2">Comments</h1>
       <CommentList comments={nestedComments} />
     </div>
   );

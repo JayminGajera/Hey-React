@@ -53,14 +53,14 @@ const Head = () => {
   };
 
   return (
-    <div className="grid grid-flow-col p-3 shadow-lg">
+    <div className=" grid grid-flow-col p-3 md:w-full w-[100%] shadow-lg">
       <div className="flex items-center col-span-1">
         <RxHamburgerMenu
           onClick={handleToggel}
           className="text-2xl font-bold cursor-pointer"
         />
         <img
-          className="h-6 mx-2"
+          className="md:h-6 h-4 mx-2"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCa4EDbkI8ATSXs7s-ovSP2cX_Qfw06aSRWA&usqp=CAU"
           alt="yt logo"
         />
@@ -69,11 +69,11 @@ const Head = () => {
         <input
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-1/2 border border-black p-1 rounded-l-full px-4 outline-none"
+          className="hidden md:inline-block w-1/2 border border-black p-1 rounded-l-full px-4 outline-none"
           type="search"
           placeholder="Search"
         />
-        <div className="flex place-items-center border border-black p-1 px-5 rounded-r-full cursor-pointer bg-gray-200">
+        <div className="hidden md:inline-block md:flex place-items-center border border-black p-1 px-5 rounded-r-full cursor-pointer bg-gray-200">
           <IoIosSearch />
         </div>
 
