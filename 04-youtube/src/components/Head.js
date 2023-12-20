@@ -43,7 +43,7 @@ const Head = () => {
     console.log('s',json[1]);
 
     dispatch(cacheResults({
-      [searchQuery] : json[1]
+      [searchQuery] : json[1] //key-value
     }));
 
   };
