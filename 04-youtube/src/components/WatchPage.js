@@ -6,6 +6,7 @@ import { VIDEO_DETAIL_API, GOOGLE_API_KEY } from "../utils/constants";
 import CommentsContainer from "./CommentsContainer";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import LiveChat from "./LiveChat";
+import VideoContainer from "./VideoContainer"
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -30,7 +31,7 @@ const WatchPage = () => {
   useEffect(() => {
     dispatch(closeMenu());
     getInfo();
-  }, []);
+  }, [searchParams]);
 
   const handleDescOpen = () => {
     setDescOpen(!descOpen);
@@ -55,46 +56,63 @@ const WatchPage = () => {
       </div>
 
       {/* description container */}
-      <div className="max-w-[800px] md:w-[800px] w-[320px]">
-        <h1 className="md:text-xl text-lg font-bold p-1">{info?.snippet?.title}</h1>
-        <div className="flex gap-x-10 items-center p-2 bg-gray-200 rounded-lg">
-          <h1 className="font-semibold md:text-lg text-sm">{info?.snippet?.channelTitle}</h1>
-          <p>like {info?.statistics?.likeCount}</p>
-          <button
-            onClick={() => setSubscribe(!subscribe)}
-            className="bg-black text-white py-2 px-4 rounded-full"
-          >
-            {subscribe ? (
-              <p className="flex items-center gap-x-2">
-                <MdOutlineNotificationsActive className="text-xl" /> subscribed{" "}
-              </p>
-            ) : (
-              "subscribe"
-            )}
-          </button>
-        </div>
-        <div
-          onClick={handleDescOpen}
-          className="p-2 bg-gray-200 rounded-lg mt-2 cursor-pointer"
-        >
-          <div className="flex gap-x-5">
-            <h1>{info?.statistics?.viewCount} views</h1>
-            <h1>{info?.snippet?.publishedAt}</h1>
+      <div className="flex gap-x-3">
+        <div>
+          <div className="max-w-[800px] md:w-[800px] w-[320px]">
+            <h1 className="md:text-xl text-lg font-bold p-1">
+              {info?.snippet?.title}
+            </h1>
+            <div className="flex gap-x-10 items-center p-2 bg-gray-200 rounded-lg">
+              <h1 className="font-semibold md:text-lg text-sm">
+                {info?.snippet?.channelTitle}
+              </h1>
+              <p>like {info?.statistics?.likeCount}</p>
+              <button
+                onClick={() => setSubscribe(!subscribe)}
+                className="bg-black text-white py-2 px-4 rounded-full"
+              >
+                {subscribe ? (
+                  <p className="flex items-center gap-x-2">
+                    <MdOutlineNotificationsActive className="text-xl" />{" "}
+                    subscribed{" "}
+                  </p>
+                ) : (
+                  "subscribe"
+                )}
+              </button>
+            </div>
+            <div
+              onClick={handleDescOpen}
+              className="p-2 bg-gray-200 rounded-lg mt-2 cursor-pointer"
+            >
+              <div className="flex gap-x-5">
+                <h1>{info?.statistics?.viewCount} views</h1>
+                <h1>{info?.snippet?.publishedAt}</h1>
+              </div>
+              <div className="flex flex-wrap mb-5">
+                {info?.snippet?.tags?.slice(0, 5)?.map((tag) => (
+                  <p className="text-sm opacity-90">#{tag} </p>
+                ))}
+              </div>
+              {descOpen && (
+                <p className="text-sm opacity-80">
+                  {info?.snippet?.description}
+                </p>
+              )}
+            </div>
           </div>
-          <div className="flex flex-wrap mb-5">
-            {info?.snippet?.tags?.slice(0, 5)?.map((tag) => (
-              <p className="text-sm opacity-90">#{tag} </p>
-            ))}
-          </div>
-          {descOpen && (
-            <p className="text-sm opacity-80">{info?.snippet?.description}</p>
-          )}
-        </div>
-      </div>
 
-      {/* comments container */}
-      <div className="max-w-[800px] md:w-[800px] w-[320px] mt-2">
-        <CommentsContainer />
+          {/* comments container */}
+          <div className="max-w-[800px] md:w-[800px] w-[320px] mt-2">
+            <CommentsContainer />
+          </div>
+        </div>
+        <div className="bg-gray-200 rounded-lg p-2 w-full">
+          <h1 className="font-bold text-lg">Recommand</h1>
+          <div>
+            <VideoContainer/>
+          </div>
+        </div>
       </div>
     </div>
   );

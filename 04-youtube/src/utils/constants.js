@@ -32,6 +32,8 @@ export const YOUTUBE_SEARCH_API =
 export const VIDEO_DETAIL_API =
   "https://www.googleapis.com/youtube/v3/videos?part=id%2C+snippet,statistics&id=";
 
+export const VIDEO_RECOMMEND_API = "https://www.googleapis.com/youtube/v3/activitiespart=snippet%2CcontentDetails&channelId={channel—_Id}&maxResults=25&regionCode=tw&key="+GOOGLE_API_KEY
+
 export const nestedComments = [
   {
     name: "Jaymin Gajera",
