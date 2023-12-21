@@ -56,7 +56,7 @@ const WatchPage = () => {
       </div>
 
       {/* description container */}
-      <div className="flex gap-x-3">
+      <div className="flex md:flex-row gap-x-3 flex-col">
         <div>
           <div className="max-w-[800px] md:w-[800px] w-[320px]">
             <h1 className="md:text-xl text-lg font-bold p-1">
