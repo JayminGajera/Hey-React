@@ -20,10 +20,10 @@ const Sidebar = () => {
   const isOpen = useSelector((store) => store.app.isMenuOpen);
   const isDark = useSelector((store) => store.app.isDark);
 
-  if (!isOpen) return null;
+  if (isOpen) return null;
 
   return (
-    <div className={"h-fit w-2/3 md:w-1/6 p-3 shadow-lg rounded-lg absolute md:relative bg-slate-200 md:bg-transparent " + (isDark && "text-white")}>
+    <div className={"h-fit w-2/3 md:w-1/6 p-3 shadow-lg rounded-lg absolute md:relative bg-slate-200 md:bg-transparent " + (isDark && "bg-black text-white")}>
       <ul className="flex flex-col gap-1 ">
         <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
