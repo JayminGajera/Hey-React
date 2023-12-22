@@ -44,7 +44,7 @@ const WatchPage = () => {
       <div className="md:flex md:flex-row flex-col gap-x-3">
         <div className="w-full md:w-[800px]">
           <iframe
-            className="rounded-lg shadow-lg md:w-[800px] md:h-[450px] mb-2"
+            className="rounded-lg w-full h-[12rem] shadow-lg md:w-[800px] md:h-[450px] mb-2"
             src={"https://www.youtube.com/embed/" + searchParams.get("v")}
             title="YouTube video player"
             frameborder="0"
@@ -60,7 +60,7 @@ const WatchPage = () => {
       {/* description container */}
       <div className="flex md:flex-row gap-x-3 flex-col">
         <div>
-          <div className="max-w-[800px] md:w-[800px] w-[320px]">
+          <div className="max-w-[800px] md:w-[800px] w-full">
             <h1 className={"md:text-xl text-lg font-bold p-1" + (isDark && " text-white")}>
               {info?.snippet?.title}
             </h1>
@@ -105,11 +105,11 @@ const WatchPage = () => {
           </div>
 
           {/* comments container */}
-          <div className="max-w-[800px] md:w-[800px] w-[320px] mt-2">
+          <div className="max-w-[800px] md:w-[800px] w-full mt-2">
             <CommentsContainer />
           </div>
         </div>
-        <div className={"bg-gray-200 rounded-lg p-2 w-full " + (isDark && "bg-slate-800 text-white") }>
+        <div className={"bg-gray-200 rounded-lg p-2 w-full mt-2 " + (isDark && "bg-slate-800 text-white") }>
           <h1 className={"font-bold text-lg " + (isDark && "text-white")}>Recommand</h1>
           <div>
             <VideoContainer/>

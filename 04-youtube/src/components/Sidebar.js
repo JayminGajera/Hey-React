@@ -23,7 +23,7 @@ const Sidebar = () => {
   if (isOpen) return null;
 
   return (
-    <div className={"h-fit w-2/3 md:w-1/6 p-3 shadow-lg rounded-lg absolute md:relative bg-slate-200 md:bg-transparent " + (isDark && "bg-black text-white")}>
+    <div className={"h-fit w-2/3 md:w-1/6 p-3 shadow-lg rounded-lg absolute md:relative md:bg-transparent " + (isDark ? "bg-black text-white " : "bg-slate-200")}>
       <ul className="flex flex-col gap-1 ">
         <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
