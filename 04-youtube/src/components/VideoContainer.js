@@ -6,40 +6,25 @@ import Shimmer from "./Shimmer";
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
-  const [isLoading,setIsLoading] = useState(false);
-
-  const handleScroll = () => {
-    if(window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight || isLoading){
-      console.log("scroll")
-    }
-    getVideos();
-  }
 
   useEffect(() => {
-    window.addEventListener('scroll',handleScroll);
-
-    return () => window.removeEventListener('scroll',handleScroll);
-  }, [isLoading]);
+    getVideos();
+  }, []);
 
   const getVideos = async () => {
-
-    setIsLoading(true);
-
     const data = await fetch(YOUTUBE_VIDEO_API);
     const json = await data.json();
 
     console.log("videos ", json.items);
     setVideos(json?.items);
-
-    setIsLoading(false);
   };
 
-  if(videos.length === 0) return <Shimmer/>
+  if (videos.length === 0) return <Shimmer />;
 
   return (
     <div className="pt-3 flex flex-wrap">
       {videos.map((video) => (
-        <Link key={video.id} to={"/watch?v="+video.id}>
+        <Link key={video.id} to={"/watch?v=" + video.id}>
           <VideoCard info={video} />
         </Link>
       ))}

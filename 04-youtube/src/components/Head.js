@@ -9,6 +9,7 @@ import { cacheResults } from "../utils/searchSlice";
 import {handleDark} from "../utils/appSlice";
 import { MdDarkMode } from "react-icons/md";
 import { CiLight } from "react-icons/ci";
+import YT from "../img/yt.png";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -69,8 +70,8 @@ const Head = () => {
           className="text-2xl font-bold cursor-pointer"
         />
         <img
-          className="md:h-6 h-4 mx-2"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCa4EDbkI8ATSXs7s-ovSP2cX_Qfw06aSRWA&usqp=CAU"
+          className={"md:h-6 h-4 mx-2"}
+          src={YT}
           alt="yt logo"
         />
       </div>
@@ -78,11 +79,11 @@ const Head = () => {
         <input
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className={"hidden md:inline-block w-1/2 border border-black p-1 rounded-l-full px-4 outline-none " + (isDark && "bg-black text-white border border-gray-100")}
+          className={"hidden md:inline-block w-1/2 border border-black p-1 rounded-l-full px-4 outline-none " + (isDark && "bg-slate-800 text-white")}
           type="search"
           placeholder="Search"
         />
-        <div className={"hidden md:inline-block md:flex place-items-center border border-black p-1 px-5 rounded-r-full cursor-pointer " + (isDark && "border border-white")}>
+        <div className={"hidden md:inline-block md:flex place-items-center border border-black p-1 px-5 rounded-r-full cursor-pointer " + (isDark && "bg-slate-800")}>
           <IoIosSearch />
         </div>
 
