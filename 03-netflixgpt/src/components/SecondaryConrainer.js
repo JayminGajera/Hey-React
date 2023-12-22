@@ -7,7 +7,7 @@ const SecondaryConrainer = () => {
 
   return (
     <div className="bg-black">
-      <div className=" md:-mt-40 z-30 relative">
+      <div className=" md:-mt-28 z-30 relative">
         <MovieList title={"Now Playing"} movies={movies.nowPlayingMovies} />
         <MovieList title={"Upcoming"} movies={movies.upcomingMovies} />
         <MovieList title={"Popular"} movies={movies.popularMovies} />
