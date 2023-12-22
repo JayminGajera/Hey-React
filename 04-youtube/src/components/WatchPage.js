@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { closeMenu } from "../utils/appSlice";
 import { useSearchParams } from "react-router-dom";
 import { VIDEO_DETAIL_API, GOOGLE_API_KEY } from "../utils/constants";
@@ -14,6 +14,8 @@ const WatchPage = () => {
   const [subscribe, setSubscribe] = useState(false);
 
   const [descOpen, setDescOpen] = useState(false);
+
+  const isDark = useSelector((store) => store.app.isDark);
 
   console.log("search params ", searchParams.get("v"));
 
@@ -59,10 +61,10 @@ const WatchPage = () => {
       <div className="flex md:flex-row gap-x-3 flex-col">
         <div>
           <div className="max-w-[800px] md:w-[800px] w-[320px]">
-            <h1 className="md:text-xl text-lg font-bold p-1">
+            <h1 className={"md:text-xl text-lg font-bold p-1" + (isDark && " text-white")}>
               {info?.snippet?.title}
             </h1>
-            <div className="flex gap-x-10 items-center p-2 bg-gray-200 rounded-lg">
+            <div className={"flex gap-x-10 items-center p-2 bg-gray-200 rounded-lg " + (isDark && "bg-slate-800 text-white ")}>
               <h1 className="font-semibold md:text-lg text-sm">
                 {info?.snippet?.channelTitle}
               </h1>
@@ -83,7 +85,7 @@ const WatchPage = () => {
             </div>
             <div
               onClick={handleDescOpen}
-              className="p-2 bg-gray-200 rounded-lg mt-2 cursor-pointer"
+              className={"p-2 bg-gray-200 rounded-lg mt-2 cursor-pointer "+ (isDark && "bg-slate-800 text-white ")}
             >
               <div className="flex gap-x-5">
                 <h1>{info?.statistics?.viewCount} views</h1>
@@ -107,8 +109,8 @@ const WatchPage = () => {
             <CommentsContainer />
           </div>
         </div>
-        <div className="bg-gray-200 rounded-lg p-2 w-full">
-          <h1 className="font-bold text-lg">Recommand</h1>
+        <div className={"bg-gray-200 rounded-lg p-2 w-full " + (isDark && "bg-slate-800 text-white") }>
+          <h1 className={"font-bold text-lg " + (isDark && "text-white")}>Recommand</h1>
           <div>
             <VideoContainer/>
           </div>

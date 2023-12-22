@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggelMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheResults } from "../utils/searchSlice";
+import {handleDark} from "../utils/appSlice";
+import { MdDarkMode } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -14,6 +17,8 @@ const Head = () => {
   const dispatch = useDispatch();
 
   const searchCache = useSelector((store) => store.search);
+
+  const isDark = useSelector((store) => store.app.isDark);
 
   useEffect(() => {
     //API call
@@ -52,8 +57,12 @@ const Head = () => {
     dispatch(toggelMenu());
   };
 
+  const handleDarkMode = () => {
+    dispatch(handleDark());
+  }
+
   return (
-    <div className=" grid grid-flow-col p-3 md:w-full w-[100%] shadow-lg">
+    <div className={" grid grid-flow-col p-3 md:w-full w-[100%] shadow-lg " + (isDark && "bg-black text-white")}>
       <div className="flex items-center col-span-1">
         <RxHamburgerMenu
           onClick={handleToggel}
@@ -69,11 +78,11 @@ const Head = () => {
         <input
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="hidden md:inline-block w-1/2 border border-black p-1 rounded-l-full px-4 outline-none"
+          className={"hidden md:inline-block w-1/2 border border-black p-1 rounded-l-full px-4 outline-none " + (isDark && "bg-black text-white border border-gray-100")}
           type="search"
           placeholder="Search"
         />
-        <div className="hidden md:inline-block md:flex place-items-center border border-black p-1 px-5 rounded-r-full cursor-pointer bg-gray-200">
+        <div className={"hidden md:inline-block md:flex place-items-center border border-black p-1 px-5 rounded-r-full cursor-pointer " + (isDark && "border border-white")}>
           <IoIosSearch />
         </div>
 
@@ -85,7 +94,8 @@ const Head = () => {
           </ul>
         </div>
       </div>
-      <div className="col-span-1">
+      <div className="col-span-1 flex gap-2 items-center">
+      <button onClick={handleDarkMode} className="text-2xl">{isDark ? <CiLight/> : <MdDarkMode/>}</button>
         <FaRegUserCircle className="text-2xl" />
       </div>
     </div>

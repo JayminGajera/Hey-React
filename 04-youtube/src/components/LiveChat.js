@@ -8,6 +8,8 @@ const LiveChat = () => {
   const [liveMessage, setLiveMessage] = useState("");
   const dispatch = useDispatch();
 
+  const isDark = useSelector((store) => store.app.isDark);
+
   const chatMessages = useSelector((store) => store.chat.messages);
 
   useEffect(() => {
@@ -27,10 +29,10 @@ const LiveChat = () => {
 
   return (
     <>
-      <h1 className="font-bold py-2 px-1 mb-2 md:mb-0 bg-slate-200 rounded-lg border border-b-white ">
+      <h1 className={"font-bold py-2 px-1 mb-2 md:mb-0 bg-slate-200 rounded-lg border border-b-white " + (isDark && "bg-slate-800 text-white border border-none")}>
         LiveChat
       </h1>
-      <div className="w-full rounded-lg h-[360px] shadow-lg bg-slate-200 p-2 overflow-y-scroll flex flex-col-reverse container-snap">
+      <div className={"w-full rounded-lg h-[360px] shadow-lg bg-slate-200 p-2 overflow-y-scroll flex flex-col-reverse container-snap mt-2 " + (isDark && "bg-slate-800 text-white border border-none")}>
         {chatMessages.map((c) => (
           <ChatMessage key={c.name} name={c.name} message={c.message} />
         ))}
@@ -45,12 +47,12 @@ const LiveChat = () => {
 
           setLiveMessage("");
         }}
-        className="py-2 px-1 bg-slate-200 rounded-lg md:mt-1 mt-2 flex gap-x-1"
+        className={"py-2 px-1 bg-slate-200 rounded-lg md:mt-1 mt-2 flex gap-x-1 mb-2 " + (isDark && "bg-slate-800 text-black border border-none")}
       >
         <input
           value={liveMessage}
           onChange={(e) => setLiveMessage(e.target.value)}
-          className="px-3 py-1 text-sm outline-none border w-full border-black rounded-full"
+          className={"px-3 py-1 text-sm outline-none border w-full border-black rounded-full "+ (isDark && "bg-slate-600 text-white")}
           type="text"
           placeholder="live chat"
         />

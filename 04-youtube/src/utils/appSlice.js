@@ -5,6 +5,7 @@ const appSlice = createSlice({
     name:"app",
     initialState:{
         isMenuOpen: true,
+        isDark:false
     },
     reducers:{
         toggelMenu:(state) => {
@@ -12,9 +13,12 @@ const appSlice = createSlice({
         },
         closeMenu:(state) => {
             state.isMenuOpen = false;
+        },
+        handleDark:(state) => {
+            state.isDark = !state.isDark;
         }
     }
 });
 
-export const {toggelMenu, closeMenu} = appSlice.actions;
+export const {toggelMenu, closeMenu,handleDark} = appSlice.actions;
 export default appSlice.reducer;

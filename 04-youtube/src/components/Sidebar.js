@@ -18,13 +18,14 @@ import { BiMoviePlay } from "react-icons/bi";
 
 const Sidebar = () => {
   const isOpen = useSelector((store) => store.app.isMenuOpen);
+  const isDark = useSelector((store) => store.app.isDark);
 
   if (!isOpen) return null;
 
   return (
-    <div className="h-fit w-2/3 md:w-1/6 p-3 shadow-lg rounded-lg absolute md:relative bg-slate-200 md:bg-transparent ">
+    <div className={"h-fit w-2/3 md:w-1/6 p-3 shadow-lg rounded-lg absolute md:relative bg-slate-200 md:bg-transparent " + (isDark && "text-white")}>
       <ul className="flex flex-col gap-1 ">
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <GoHome className="text-2xl" />
@@ -32,7 +33,7 @@ const Sidebar = () => {
             </div>
           </Link>
         </li>
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <SiYoutubeshorts className="text-2xl" />
@@ -40,7 +41,7 @@ const Sidebar = () => {
             </div>
           </Link>
         </li>
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <MdOutlineSubscriptions className="text-2xl" />
@@ -55,7 +56,7 @@ const Sidebar = () => {
         </div>
       </h1>
       <ul className="flex flex-col gap-1">
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <LuUserSquare2 className="text-2xl" />
@@ -63,7 +64,7 @@ const Sidebar = () => {
             </div>
           </Link>
         </li>
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <RiHistoryLine className="text-2xl" />
@@ -71,7 +72,7 @@ const Sidebar = () => {
             </div>
           </Link>
         </li>
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <RiVideoLine className="text-2xl" />
@@ -79,7 +80,7 @@ const Sidebar = () => {
             </div>
           </Link>
         </li>
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <MdOutlineWatchLater className="text-2xl" />
@@ -87,7 +88,7 @@ const Sidebar = () => {
             </div>
           </Link>
         </li>
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <AiOutlineLike className="text-2xl" />
@@ -98,7 +99,7 @@ const Sidebar = () => {
       </ul>
       <h1 className="font-bold pt-5 mb-3">Explore</h1>
       <ul className="flex flex-col gap-1">
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <BsFire className="text-2xl" />
@@ -106,7 +107,7 @@ const Sidebar = () => {
             </div>
           </Link>
         </li>
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <HiOutlineShoppingBag className="text-2xl" />
@@ -114,7 +115,7 @@ const Sidebar = () => {
             </div>
           </Link>
         </li>
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <IoMusicalNoteOutline className="text-2xl" />
@@ -122,7 +123,7 @@ const Sidebar = () => {
             </div>
           </Link>
         </li>
-        <li className="hover:bg-slate-200 p-2 rounded-lg">
+        <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
           <Link to="/">
             <div className="flex gap-x-2 items-center">
               <BiMoviePlay className="text-2xl" />
