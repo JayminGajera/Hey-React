@@ -86,7 +86,7 @@ const Head = () => {
           <IoIosSearch />
         </div>
 
-        <div className={"absolute mt-10 px-2 w-[30rem] rounded-lg bg-white shadow-lg "+ (isDark && "bg-slate-800 text-white")}>
+        <div className={"absolute mt-10 px-2 w-[30rem] rounded-lg shadow-lg "+ (isDark ? "bg-slate-800 text-white " : "bg-slate-200")}>
           <ul>
            {
             suggestion?.map((s) => <li key={s} className={"p-2 shadow-sm hover:bg-gray-100 rounded-lg flex items-center gap-x-2 " + (isDark && "hover:bg-slate-700")} ><IoIosSearch /> {s}</li>)
