@@ -6,9 +6,9 @@ const ButtonList = () => {
   return (
     <div className='flex md:w-full w-[100%] md:gap-x-2 gap-x-1 overflow-x-scroll container-snap'>
       {
-        buttonList.map((category) => {
+        buttonList.map((category,index) => {
           return (
-            <Button key={category} name={category}/>
+            <Button key={category+index} name={category}/>
           )
         })
       }

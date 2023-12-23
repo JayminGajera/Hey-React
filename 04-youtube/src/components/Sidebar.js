@@ -34,7 +34,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li className={"hover:bg-slate-200 p-2 rounded-lg" + (isDark && " hover:bg-slate-800")}>
-          <Link to="/">
+          <Link to="/trending">
             <div className="flex gap-x-2 items-center">
               <SiYoutubeshorts className="text-2xl" />
               <p>Shorts</p>

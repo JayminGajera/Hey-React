@@ -8,11 +8,11 @@ const VideoCard = ({info}) => {
 
   return (
     <div className='p-2 w-80'>
-      <img className='rounded-lg' src={thumbnails.medium.url} alt='video-thumbnail'/>
+      <img className='rounded-lg' src={thumbnails?.medium?.url} alt='video-thumbnail'/>
       <div>
         <h1 className='font-bold py-2'>{title}</h1>
         <h2 className='text-sm'>{channelTitle}</h2>
-        <p className='text-sm'>{statistics.viewCount} views</p>
+        <p className='text-sm'>{statistics?.viewCount} views</p>
       </div>
     </div>
   )
