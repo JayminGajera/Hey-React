@@ -20,7 +20,7 @@ const Sidebar = () => {
   const isOpen = useSelector((store) => store.app.isMenuOpen);
   const isDark = useSelector((store) => store.app.isDark);
 
-  if (isOpen) return null;
+  if (!isOpen) return null;
 
   return (
     <div className={"h-fit w-2/3 md:w-1/6 p-3 shadow-lg rounded-lg absolute md:relative md:bg-transparent " + (isDark ? "bg-black text-white " : "bg-slate-200")}>
